@@ -105,6 +105,53 @@ We'll be using a modern web application stack:
 - **Database**: MongoDB
 - **Development Environment**: GitHub Codespaces
 
+### Setting up the Django Project and App
+
+To begin development for the OctoFit Tracker backend, follow these steps to set up the Django project and app:
+
+1. **Create the Project Directory**:
+   Navigate to the `octofit-tracker/backend` directory:
+   ```bash
+   mkdir -p octofit-tracker/backend
+   cd octofit-tracker/backend
+   ```
+
+2. **Initialize a Django Project**:
+   Create a Django project named `octofit_tracker`:
+   ```bash
+   django-admin startproject octofit_tracker .
+   ```
+
+3. **Create the App**:
+   Inside the project, create a Django app named `tracker`:
+   ```bash
+   python manage.py startapp tracker
+   ```
+
+4. **Configure Installed Apps**:
+   Add the `tracker` app to the `INSTALLED_APPS` list in `octofit_tracker/settings.py`:
+   ```python
+   # filepath: octofit_tracker/settings.py
+   INSTALLED_APPS = [
+       ...existing code...
+       'tracker',
+   ]
+   ```
+
+5. **Run Initial Migrations**:
+   Apply initial migrations to set up the database:
+   ```bash
+   python manage.py migrate
+   ```
+
+6. **Run the Development Server**:
+   Start the Django development server to verify the setup:
+   ```bash
+   python manage.py runserver
+   ```
+
+   Access the server at `http://127.0.0.1:8000/` to confirm it's running.
+
 ### Workshop Structure
 
 1. **Introduction**
